@@ -1,0 +1,162 @@
+body {
+    font-family: sans-serif;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #fed330, #b33771);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Ensure gradient animation stays within bounds */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.quiz-container {
+    background-color: rgba(255, 255, 255, 0.9); /* थोड़ा पारदर्शी सफेद */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* थोड़ी गहरी शैडो */
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.quiz-title {
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px #eee; /* हल्का टेक्स्ट शैडो */
+}
+
+.question-container {
+    margin-bottom: 20px;
+    background-color: #f9f9f9; /* हल्का बैकग्राउंड */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#question {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+    min-height: 60px; /* To prevent layout shifts for short questions */
+    display: flex; /* For vertical alignment */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+}
+
+/* MathJax rendered elements styling */
+.MathJax {
+    font-size: 1.2em !important; /* Ensure MathJax scales with question text */
+    color: #555 !important;
+}
+
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.option {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* रंग परिवर्तन के लिए ट्रांजिशन */
+    min-height: 50px; /* Ensure buttons have a minimum height */
+    display: flex; /* To align text vertically */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    text-align: center; /* Ensure text is centered within button */
+    word-wrap: break-word; /* Allow long words to break */
+    white-space: normal; /* Allow text to wrap */
+}
+
+.option:hover {
+    background-color: #ddd;
+    color: #333;
+}
+
+.correct {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    animation: pulseGreen 0.5s ease; /* Added animation */
+}
+
+.incorrect {
+    background-color: #f44336 !important;
+    color: white !important;
+    animation: shakeRed 0.4s ease; /* Added animation */
+}
+
+/* Animations for feedback */
+@keyframes pulseGreen {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shakeRed {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+
+.results-container {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#results-container h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#results-container p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#restart-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#restart-button:hover {
+    background-color: #0056b3;
+}
+
+.timer {
+    font-size: 1em;
+    color: #777;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.7); /* हल्का बैकग्राउंड */
+    padding: 8px;
+    border-radius: 5px;
+}

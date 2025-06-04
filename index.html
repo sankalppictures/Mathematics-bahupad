@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>गणित: बहुपद - क्विज़</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1 class="quiz-title">बहुपद</h1>
+        <div id="question-container" class="question-container">
+            <h2 id="question">यहाँ प्रश्न आएगा</h2>
+            <div class="options">
+                <button class="option" data-index="0"></button>
+                <button class="option" data-index="1"></button>
+                <button class="option" data-index="2"></button>
+                <button class="option" data-index="3"></button>
+            </div>
+        </div>
+        <div id="results-container" class="results-container" style="display: none;">
+            <h2>परिणाम</h2>
+            <p>आपने <span id="score"></span> में से <span id="total-questions"></span> अंक प्राप्त किए।</p>
+            <button id="restart-button">पुनः प्रयास करें</button>
+        </div>
+        <div class="timer">समय: <span id="time">60</span> सेकंड</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
